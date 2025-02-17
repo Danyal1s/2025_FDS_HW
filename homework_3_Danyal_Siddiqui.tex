@@ -1,0 +1,342 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Homework 3},
+  pdfauthor={GSND 5345Q, Fundamentals of Data Science},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Homework 3}
+\author{GSND 5345Q, Fundamentals of Data Science}
+\date{Due Monday, February 10th, 2025}
+
+\begin{document}
+\maketitle
+
+\subsection*{GitHub (50 points)}
+
+In this section, you will reinforce the concepts and skills covered in
+the introductory lecture on Git and GitHub. You will answer a set of
+conceptual questions to demonstrate your understanding of Git's core
+functionality and complete hands-on tasks to practice using Git commands
+and interacting with GitHub.
+
+\begin{enumerate}
+
+  \item What is the purpose of Git, and how does it differ from GitHub?
+
+  \item Answer: Git is an open-source software and version control system that allows for tracking of file versions, which is useful for documenting changes to code. GitHub is a platform for hosting and sharing Git code with other users online via repositories.
+
+  \item Explain the difference between a commit and a push in Git.
+  \item What does the command git clone do, and how is it different from git pull?
+  \item Initialize a new Git repository in a local folder and create a file named README.md. Add some text to it, commit the changes, and push it to a new GitHub repository. Submit the link to your repository.
+        \item Fork the \href{https://github.com/wevanjohnson/my.package}{https://github.com/wevanjohnson/my.package} directory and clone it to your local machine. Then add your name as an author in the DESCRIPTION file local repository and add a multiplication function to the R package (R folder). Then push the changes to your GitHub fork, and send me a pull request with your changes.  
+        \item Clone the \href{https://github.com/wevanjohnson/2025\_Spring\_FDS}{https://github.com/wevanjohnson/2025\_Spring\_FDS} repository on your computer. Find something that could be improved (typo? explain somthing better), add files/changes to it, and upload it to GitHub. Send another well-annotated pull request to Dr. Johnson. 
+    \end{enumerate}
+
+\subsection*{R Basics (50 points)}
+
+These exercises will give you some introductory experience with the R
+programming basics. Please complete the following:
+
+1. What is the sum of the first 100 positive integers? The formula for
+the sum of integers \(1\) through \(n\) is \(n(n+1)/2\). Define
+\(n=100\) and then use R to compute the sum of \(1\) through \(100\)
+using the formula. What is the sum?
+
+2. Now use the same formula to compute the sum of the integers from 1
+through 1,000.
+
+3. Look at the result of typing the following code into R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{1000}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, n)}
+\FunctionTok{sum}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+Based on the result, what do you think the functions \texttt{seq} and
+\texttt{sum} do? You can use \texttt{help}.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \texttt{sum} creates a list of numbers and \texttt{seq} adds them up.
+\item
+  \texttt{seq} creates a list of numbers and \texttt{sum} adds them up.
+\item
+  \texttt{seq} creates a random list and \texttt{sum} computes the sum
+  of 1 through 1,000.
+\item
+  \texttt{sum} always returns the same number.
+\end{enumerate}
+
+4. In math and programming, we say that we evaluate a function when we
+replace the argument with a given number. So if we type
+\texttt{sqrt(4)}, we evaluate the \texttt{sqrt} function. In R, you can
+evaluate a function inside another function. The evaluations happen from
+the inside out. Use one line of code to compute the log, in base 10, of
+the square root of 100.
+
+5. Which of the following will always return the numeric value stored in
+\texttt{x}? You can try out examples and use the help system if you
+want.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \texttt{log(10\^{}x)}
+\item
+  \texttt{log10(x\^{}10)}
+\item
+  \texttt{log(exp(x))}
+\item
+  \texttt{exp(log(x,\ base\ =\ 2))}
+\end{enumerate}
+
+6. Load the US murders dataset.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dslabs)}
+\FunctionTok{data}\NormalTok{(murders)}
+\end{Highlighting}
+\end{Shaded}
+
+Use the function \texttt{str} to examine the structure of the
+\texttt{murders} object. Which of the following best describes the
+variables represented in this data frame?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  The 51 states.
+\item
+  The murder rates for all 50 states and DC.
+\item
+  The state name, the abbreviation of the state name, the state's
+  region, and the state's population and total number of murders for
+  2010.
+\item
+  \texttt{str} shows no relevant information.
+\end{enumerate}
+
+7. What are the column names used by the data frame for these five
+variables?
+
+8. Use the accessor \texttt{\$} to extract the state abbreviations and
+assign them to the object \texttt{a}. What is the class of this object?
+
+9. Now use the square brackets to extract the state abbreviations and
+assign them to the object \texttt{b}. Use the \texttt{identical}
+function to determine if \texttt{a} and \texttt{b} are the same.
+
+10. We saw that the \texttt{region} column stores a factor. You can
+corroborate this by typing:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(murders}\SpecialCharTok{$}\NormalTok{region)}
+\end{Highlighting}
+\end{Shaded}
+
+With one line of code, use the function \texttt{levels} and
+\texttt{length} to determine the number of regions defined by this
+dataset.
+
+11. The function \texttt{table} takes a vector and returns the frequency
+of each element. You can quickly see how many states are in each region
+by applying this function. Use this function in one line of code to
+create a table of states per region.
+
+12. Use the function \texttt{c} to create a vector with the average high
+temperatures in January for Beijing, Lagos, Paris, Rio de Janeiro, San
+Juan, and Toronto, which are 35, 88, 42, 84, 81, and 30 degrees
+Fahrenheit. Call the object \texttt{temp}.
+
+13. Now create a vector with the city names and call the object
+\texttt{city}.
+
+14. Use the \texttt{names} function and the objects defined in the
+previous exercises to associate the temperature data with its
+corresponding city.
+
+15. Use the \texttt{{[}} and \texttt{:} operators to access the
+temperature of the first three cities on the list.
+
+16. Use the \texttt{{[}} operator to access the temperature of Paris and
+San Juan.
+
+17. Use the \texttt{:} operator to create a sequence of numbers
+\(12,13,14,\dots,73\).
+
+18. Create a vector containing all the positive odd numbers smaller than
+100.
+
+19. Create a vector of numbers that starts at 6, does not pass 55, and
+adds numbers in increments of 4/7: 6, 6 + 4/7, 6 + 8/7, and so on. How
+many numbers does the list have? Hint: use \texttt{seq} and
+\texttt{length}.
+
+20. What is the class of the following object
+\texttt{a\ \textless{}-\ seq(1,\ 10,\ 0.5)}?
+
+These exercises will give you some introductory experience with
+programming basics. Please complete the following:
+
+21. What will this conditional expression return?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+
+\ControlFlowTok{if}\NormalTok{(}\FunctionTok{all}\NormalTok{(x}\SpecialCharTok{\textgreater{}}\DecValTok{0}\NormalTok{))\{}
+  \FunctionTok{print}\NormalTok{(}\StringTok{"All Postives"}\NormalTok{)}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{\{}
+  \FunctionTok{print}\NormalTok{(}\StringTok{"Not all positives"}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+22. Which of the following expressions is always \texttt{FALSE} when at
+least one entry of a logical vector \texttt{x} is TRUE?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \texttt{all(x)}
+\item
+  \texttt{any(x)}
+\item
+  \texttt{any(!x)}
+\item
+  \texttt{all(!x)}
+\end{enumerate}
+
+23. Create a function \texttt{sum\_n} that for any given value, say
+\(n\), computes the sum of the integers from 1 to n (inclusive). Use the
+function to determine the sum of integers from 1 to 5,000.
+
+24. After running the code below, what is the value of \texttt{x}?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{3}
+\NormalTok{my\_func }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(y)\{}
+\NormalTok{  x }\OtherTok{\textless{}{-}} \DecValTok{5}
+\NormalTok{  y}\SpecialCharTok{+}\DecValTok{5}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+25. Write a function \texttt{compute\_s\_n} that for any given \(n\)
+computes the sum \(S_n = 1^2 + 2^2 + 3^2 + \dots n^2\). Report the value
+of the sum when \(n=10\).
+
+\end{document}
